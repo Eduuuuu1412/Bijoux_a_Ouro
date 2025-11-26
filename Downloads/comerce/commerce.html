@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja de Bijuterias</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<header>
+  <h1> Bijoux a Ouro </h1>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Buscar produtos...">
+    <button id="searchBtn"> Buscar</button>
+  </div>
+
+  
+
+</header>
+
+<section class="banner">
+  <img src="promo.jpg" alt="Promoções Especiais">
+</section>
+
+<section class="sections">
+  <a href="feminino.html" class="section-button">Feminino</a>
+  <a href="masculino.html" class="section-button">Masculino</a>
+  <a href="infantil.html" class="section-button">Infantil</a>
+</section>
+
+<section class="products">
+  <h2> Promoções da Semana </h2>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="col_cor.webp">
+      <h3>Colar Coração</h3>
+      <p>De <span class="old-price">R$ 89,90</span> por <span class="new-price">R$ 59,90</span></p>
+      <button onclick="addToCart('Colar Coração', 59.90, 'col_cor.webp')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="per.jpg">
+      <h3>Brinco Pérola</h3>
+      <p>De <span class="old-price">R$ 51,90</span> por <span class="new-price">R$ 38,90</span></p>
+      <button onclick="addToCart('Brinco Pérola', 38.90, 'per.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="pul_cor.jpg">
+      <h3>Pulseira Dourada</h3>
+      <p>De <span class="old-price">R$ 44,90</span> por <span class="new-price">R$ 29,90</span></p>
+      <button onclick="addToCart('Pulseira Dourada', 29.90, 'pul_cor.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="corr.jpg">
+      <h3>Corrente Masculina</h3>
+      <p>De <span class="old-price">R$ 35,90</span> por <span class="new-price">R$ 17,90</span></p>
+      <button onclick="addToCart('Corrente Masculina', 17.90, 'corr.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="col_ped.jpg">
+      <h3>Colar de Pedra</h3>
+      <p>De <span class="old-price">R$ 69,90</span> por <span class="new-price">R$ 39,90</span></p>
+      <button onclick="addToCart('Colar de Pedra', 39.90, 'col_ped.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="luxo.jpg">
+      <h3>Pulseira Luxo</h3>
+      <p>De <span class="old-price">R$ 99,90</span> por <span class="new-price">R$ 47,90</span></p>
+      <button onclick="addToCart('Pulseira Luxo', 47.90, 'luxo.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="duplo.jpg">
+      <h3>Anel Duplo</h3>
+      <p>De <span class="old-price">R$ 30,90</span> por <span class="new-price">R$ 12,90</span></p>
+      <button onclick="addToCart('Anel Duplo', 12.90, 'duplo.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="ponto_luz.jpg">
+      <h3>Brinco Ponto de Luz</h3>
+      <p>De <span class="old-price">R$ 59,90</span> por <span class="new-price">R$ 34,90</span></p>
+      <button onclick="addToCart('Brinco Ponto de Luz', 34.90, 'ponto_luz.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p> Beatriz, Eduardo, Giovanna, Larissa, Mariana, Marvin, Pedro Henrique, Vitor Augusto.</p>
+</footer>
+
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+  const cards = document.querySelectorAll(".product-card");
+
+  function searchProducts() {
+    const value = searchInput.value.toLowerCase();
+    cards.forEach(c => {
+      const title = c.querySelector("h3").textContent.toLowerCase();
+      c.style.display = title.includes(value) ? "" : "none";
+    });
+  }
+
+  searchBtn.onclick = searchProducts;
+  searchInput.onkeyup = e => { if (e.key === "Enter") searchProducts(); };
+</script>
+
+<a href="cart.html" class="cart-btn-fixed"> Ver Carrinho</a>
+
+<script src="carrinho.js"></script>
+
+</body>
+</html>

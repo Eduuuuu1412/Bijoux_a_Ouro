@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seção Feminina</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Bijuterias Femininas</h1>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Buscar produtos...">
+    <button id="searchBtn"> Buscar</button>
+  </div>
+</header>
+
+<!-- BOTÃO FIXO PADRÃO DO CARRINHO -->
+<a href="cart.html" class="cart-btn-fixed"> Ver Carrinho</a>
+
+<section class="products">
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="garg.jpg">
+      <h3>Colar Dourado</h3>
+      <p>R$ 49,90</p>
+      <button onclick="addToCart('Colar Dourado', 49.90, 'garg.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="arg.jpg">
+      <h3>Brinco Prateado</h3>
+      <p>R$ 29,90</p>
+      <button onclick="addToCart('Brinco Prateado', 29.90, 'arg.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="col.jpg">
+      <h3>Pulseira Colorida</h3>
+      <p>R$ 59,90</p>
+      <button onclick="addToCart('Pulseira Colorida', 59.90, 'col.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="ped.jpg">
+      <h3>Anel com Pedra</h3>
+      <p>R$ 39,90</p>
+      <button onclick="addToCart('Anel com Pedra', 39.90, 'ped.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="tor.jpg">
+      <h3>Tornozeleira Delicada</h3>
+      <p>R$ 34,90</p>
+      <button onclick="addToCart('Tornozeleira Delicada', 34.90, 'tor.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="col_per.jpg">
+      <h3>Colar de Pérolas</h3>
+      <p>R$ 79,90</p>
+      <button onclick="addToCart('Colar de Pérolas', 79.90, 'col_per.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+  </div>
+</section>
+
+<a href="commerce.html" class="btn-voltar-fixo">← Voltar para o Início</a>
+
+<script>
+  // ------- BUSCA --------
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+  const products = document.querySelectorAll(".product-card");
+
+  function searchProducts() {
+    const value = searchInput.value.toLowerCase().trim();
+    products.forEach(prod => {
+      const name = prod.querySelector("h3").textContent.toLowerCase();
+      prod.style.display = name.includes(value) ? "" : "none";
+    });
+  }
+
+  searchBtn.addEventListener("click", searchProducts);
+  searchInput.addEventListener("keyup", e => {
+    if (e.key === "Enter") searchProducts();
+  });
+</script>
+
+<!-- Carrinho universal -->
+<script src="carrinho.js"></script>
+
+</body>
+</html>

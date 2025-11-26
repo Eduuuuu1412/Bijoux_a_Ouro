@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff6fa;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    background: white;
+    max-width: 480px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #b30059;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-top: 12px;
+    display: block;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 100%;
+    background: #b30059;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  button:hover {
+    background: #880046;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* BOTÃO VOLTAR */
+  .voltar-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    background: #eee;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .voltar-btn:hover {
+    background: #ddd;
+  }
+  

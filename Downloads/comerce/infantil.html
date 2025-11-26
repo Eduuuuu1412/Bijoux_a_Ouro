@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seção Infantil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Infantil</h1>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Buscar produtos...">
+    <button id="searchBtn">🔍 Buscar</button>
+  </div>
+</header>
+
+<!-- BOTÃO FIXO PADRÃO DO CARRINHO -->
+<a href="cart.html" class="cart-btn-fixed"> Ver Carrinho</a>
+
+<section class="products">
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="tor_in.jpg">
+      <h3>Tornozeleira de Estrela</h3>
+      <p>R$ 11,90</p>
+      <button onclick="addToCart('Tornozeleira de Estrela', 11.90, 'tor_in.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="frut.jpg">
+      <h3>Pulseira de Frutas</h3>
+      <p>R$ 13,90</p>
+      <button onclick="addToCart('Pulseira de Frutas', 13.90, 'frut.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="kit.jpg">
+      <h3>Kit Margarida</h3>
+      <p>R$ 31,90</p>
+      <button onclick="addToCart('Kit Margarida', 31.90, 'kit.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="dem.jpg">
+      <h3>Brinco temático</h3>
+      <p>R$ 8,90</p>
+      <button onclick="addToCart('Brinco Temático', 8.90, 'dem.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="cor_in.jfif">
+      <h3>Correntinha Infantil </h3>
+      <p>R$ 11,90</p>
+      <button onclick="addToCart('Correntinha Infantil', 11.90, 'cor_in.jfif')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+      <img src="donnut.jpg">
+      <h3>Kit Donnut</h3>
+      <p>R$ 25,90</p>
+      <button onclick="addToCart('Kit Donnut', 25.90, 'col_per.jpg')">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product-card">
+        <img src="mir_rat.jpg">
+        <h3>Colar Rato</h3>
+        <p>R$ 16,90</p>
+        <button onclick="addToCart('Colar Rato', 16.90, 'mir_rat.jpg')">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card">
+        <img src="bor.jpg">
+        <h3>Anel de Borboleta</h3>
+        <p>R$ 8,90</p>
+        <button onclick="addToCart('Anel de Borboleta', 8.90, 'bor.jpg')">Adicionar ao Carrinho</button>
+      </div>
+
+  </div>
+</section>
+
+<a href="commerce.html" class="btn-voltar-fixo">← Voltar para o Início</a>
+
+<script>
+  // ------- BUSCA --------
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+  const products = document.querySelectorAll(".product-card");
+
+  function searchProducts() {
+    const value = searchInput.value.toLowerCase().trim();
+    products.forEach(prod => {
+      const name = prod.querySelector("h3").textContent.toLowerCase();
+      prod.style.display = name.includes(value) ? "" : "none";
+    });
+  }
+
+  searchBtn.addEventListener("click", searchProducts);
+  searchInput.addEventListener("keyup", e => {
+    if (e.key === "Enter") searchProducts();
+  });
+</script>
+
+<!-- Carrinho universal -->
+<script src="carrinho.js"></script>
+
+</body>
+</html>
